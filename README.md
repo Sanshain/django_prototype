@@ -1,2 +1,4 @@
 # django prototype
-usefull django sample project for quick start
+Usefull django sample project for quick start
+
+Use `git clone` command to enjoy

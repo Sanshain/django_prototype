@@ -11,7 +11,7 @@ from proto_app.forms.auth import LoginForm
 
 
 def index(request: HttpRequest):
-    return HttpResponse('123')
+    return HttpResponse('test')
 
 
 class SigninView(LoginView):

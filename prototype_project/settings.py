@@ -15,7 +15,6 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
@@ -25,8 +24,7 @@ SECRET_KEY = '3+ffq!curhc(%p5485%9u3g-*wzts!(i))ab+fregu5p3z_%mi'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ['localhost', '127.0.0.1']  # []
 
 # Application definition
 
@@ -37,6 +35,18 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    # 'allauth.socialaccount.providers.vk',
+    # 'allauth.socialaccount.providers.google',
+    # 'allauth.socialaccount.providers.instagram',
+    # 'allauth.socialaccount.providers.github',
+
+    'django_extension',
+
     'proto_app'
 ]
 
@@ -55,7 +65,11 @@ ROOT_URLCONF = 'prototype_project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            # os.path.join(BASE_DIR, 'templates'),
+            # os.path.join(BASE_DIR, 'proto_app', 'templates'),
+            # os.path.join(BASE_DIR, 'proto_app', 'templates', 'allauth'),
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -70,7 +84,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'prototype_project.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
@@ -80,7 +93,6 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -100,7 +112,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
 
@@ -114,12 +125,10 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
-
 
 """
 CUSTOM:
@@ -131,16 +140,13 @@ CUSTOM:
 MEDIA_ROOT = os.path.join(BASE_DIR, "media/")
 MEDIA_URL = '/media/'
 
-
 # login redirect settings:
 
-LOGOUT_REDIRECT_URL = '/'   # reverse_lazy
-
+LOGOUT_REDIRECT_URL = '/'  # reverse_lazy
 
 # slash settings:
 
 APPEND_SLASH = True
-
 
 # EMAIL settings:
 
@@ -151,8 +157,27 @@ EMAIL_PORT = 465
 EMAIL_USE_TLS = True
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
-
 # OAuth settings:
+
+# necessary:
+SITE_ID = 2
+
+AUTHENTICATION_BACKENDS = [
+
+    # Needed to login by username in Django admin, regardless of `allauth`
+    'django.contrib.auth.backends.ModelBackend',
+    # `allauth` specific authentication methods, such as login by e-mail
+    'allauth.account.auth_backends.AuthenticationBackend',
+]
+
+
+# optional:
+
+SOCIALACCOUNT_PROVIDERS = {
+    'google': {
+
+    },
+}
 
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_USERNAME_REQUIRED = False

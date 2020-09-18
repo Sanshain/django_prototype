@@ -1,0 +1,106 @@
+<link rel="stylesheet" href="/static/style/forms.css">
+
+<div class="content">
+
+    <div class="form_container">
+
+        <div class="sign__head"><h1>Авторизуйтесь</h1></div>
+        <form action="" id='sign_in' method="POST">
+
+            {% csrf_token %}
+            {{ LoginForm }}
+            <input type="submit" name="auth" value="Войти">
+
+            {% load socialaccount %}
+            <a href='{% provider_login_url "vk" method="oauth2" %}'>
+                <img src="/static/images/vk_logo.png" alt="vk auth">
+            </a>
+
+        </form>
+        <form action="" id='sign_up' method="POST" class="reg">
+            {% csrf_token %}
+            {{ RegisterForm }}
+            <input type="submit" value="Зарегистрироваться">
+        </form>
+
+        <div class="switch" id="sign_switch"><div class="active">Регистрация</div></div>
+
+    </div>
+
+
+    {% if messages %}
+        <ul class="errors">
+            {% for message in messages %}
+                {{ message }}
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    {% if reg %}
+        <style>
+            form{
+                left: -60vh;
+                opacity: 0;
+            }
+            .reg{
+                left: 0;
+                top:11vh;
+                opacity: 1;
+            }
+            .sign__head div{
+                padding-bottom: 1em;
+            }
+        </style>
+        <script>
+            document.getElementById('sign_switch').innerText = "Вход";
+        </script>
+    {% endif %}
+
+</div>
+
+
+<script>
+    sign_switch.onclick = function(event){
+
+        let sign_in = document.getElementById('sign_in'),
+            sign_up = document.getElementById('sign_up'),
+            sign_switch = document.getElementById('sign_switch');
+            sign_switch.style.opacity = 0;
+
+        let val = 'Регистрация';
+        let activeForm = sign_up;
+
+        if (parseInt(getComputedStyle(sign_up).left) == 0){
+            sign_up.style.left = '60vw'; // 60vw
+            sign_up.style.opacity = '0'; // 60vw
+
+            sign_in.style.left = '0'; // 60vw
+            sign_in.style.opacity = '1'; // 60vw
+            activeForm = sign_in;
+        }
+        else{
+            sign_up.style.left = '0'; // 60vw
+            sign_up.style.opacity = '1'; // 60vw
+            sign_in.style.left = '-60vw'; // 60vw
+            sign_in.style.opacity = '0'; // 60vw
+            val = 'Вход';
+            // sign_in.children[0].focus();
+
+        }
+
+        setTimeout(() => {
+
+            sign_switch.innerText = val;
+            sign_switch.style.opacity = 1;
+
+            activeForm.children[1].value = '';
+            //activeForm.children[1].focus();
+        }, 500);
+
+        var errors = document.querySelector('.errors');
+        if (errors){
+            errors.style.opacity = '0';
+        }
+    }
+</script>
+

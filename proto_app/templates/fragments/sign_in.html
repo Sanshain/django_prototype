@@ -1,0 +1,32 @@
+<link rel="stylesheet" href="/static/style/forms.css">
+
+<div class="content">
+
+    <div class="form_container">
+
+        <h2>Авторизуйтесь</h2>
+
+        <form action="" id='sign_in' method="POST">
+
+            {% csrf_token %}
+            {{ LoginForm }}
+            <input type="submit" name="auth" value="Войти">
+
+            {% load socialaccount %}
+            <a href='{% provider_login_url "vk" method="oauth2" %}'>
+                <img src="/static/images/vk_logo.png" alt="vk auth">
+            </a>
+
+        </form>
+
+    </div>
+
+    {% if messages %}
+        <ul class="errors">
+            {% for message in messages %}
+                {{ message }}
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+</div>

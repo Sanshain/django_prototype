@@ -15,7 +15,7 @@ def index(request: HttpRequest):
 
 
 class SigninView(LoginView):
-    template_name = "base.html"
+    template_name = "base.html"                                 # base
     from_class = LoginForm                                      # AuthenticationForm
 
     def get_success_url(self):
@@ -23,8 +23,14 @@ class SigninView(LoginView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        # context['content'] = render_to_string('fragments/login.html', {
-        #     'RegisterForm': RegisterForm
+
+        context['content'] = render_to_string('fragments/sign_in.html', {
+            'LoginForm': self.form_class
+        }, self.request)
+
+        # context['content'] = render_to_string('fragments/sign.html', {
+        #     'RegisterForm': RegisterForm,
+        #     'LoginForm': self.form_class()
         # }, self.request)
         return context
 

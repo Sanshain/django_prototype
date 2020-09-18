@@ -19,7 +19,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '3+ffq!curhc(%p5485%9u3g-*wzts!(i))ab+fregu5p3z_%mi'
+SECRET_KEY = '3+ffq!curhc(%p5485%9u3g-*wzts!(i))ab+fregu5p3z_%mi'   # <= attention! change it on deploy!
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     # 'allauth.socialaccount.providers.instagram',
     # 'allauth.socialaccount.providers.github',
 
-    'django_extension',
+    'django-ui-widgets',
 
     'proto_app'
 ]

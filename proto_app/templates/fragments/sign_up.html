@@ -1,0 +1,30 @@
+<link rel="stylesheet" href="/static/style/forms.css">
+
+<div class="content">
+
+    <div class="form_container">
+
+        <h1>Регистрация</h1>
+        <form action="" id='sign_up' method="POST" class="reg">
+            {% csrf_token %}
+            {{ RegisterForm }}
+            <input type="submit" value="Зарегистрироваться">
+        </form>
+
+        <div class="switch" id="sign_switch"><div class="active">Регистрация</div></div>
+
+    </div>
+
+
+    {% if messages %}
+        <ul class="errors">
+            {% for message in messages %}
+                {{ message }}
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+</div>
+
+
+

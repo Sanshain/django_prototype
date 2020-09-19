@@ -1,4 +1,4 @@
-Usefull django sample project for quick start anyone project
+Full-featured django sample for quick launch of any project
 
 ## Quick start
 - Clone this repository:

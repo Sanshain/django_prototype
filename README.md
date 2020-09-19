@@ -2,9 +2,9 @@ Usefull django sample project for quick start anyone project
 
 ## Quick start
 - Clone the repositiry:
-```
-git clone https://github.com/Sanshain/django_prototype.git
-```
+  ```
+  git clone https://github.com/Sanshain/django_prototype.git
+  ```
 - Create own virtualenv and activate it:
   ```
   virtualenv __venv

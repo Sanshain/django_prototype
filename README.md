@@ -12,7 +12,7 @@ Usefull django sample project for quick start anyone project
 - Activate vitrualenv:
   - linux:
   ```
-    venv/bin/activate
+    __venv/bin/activate
   ```
   - windows:
   ```

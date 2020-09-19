@@ -10,6 +10,12 @@ Full-featured django sample for quick launch of any project
 - SigninView and base template
 - some necessary folders like `static`, `forms`, `views`, `models`, which does not made the `manage.py startapp` 
 
+#### Requirements to enjoy: 
+
+- `pip` and `python`>=3.6
+- `npm`
+- `git`
+
 ## Quick start
 
 Launch:

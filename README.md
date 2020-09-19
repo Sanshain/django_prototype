@@ -1,6 +1,16 @@
 Full-featured django sample for quick launch of any project
 
-## Quick start
+## Consists of:
+
+- Tools for static files autj building:
+  - configured rollup with typescript plugin
+  - configured gulp with less plugin and default watch task in package folder
+- allauth out of the box
+- installed `PILL`
+- SigninView and base template
+- some necessary folders like `static`, `forms`, `views`, `models`, which does not made the `manage.py startapp` 
+
+## Quick start (manual)
 - Clone this repository:
   ```
   git clone https://github.com/Sanshain/django_prototype.git
@@ -34,3 +44,5 @@ Full-featured django sample for quick launch of any project
   rollup -cw
   gulp
   ```
+  
+  

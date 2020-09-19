@@ -1,7 +1,7 @@
 Usefull django sample project for quick start anyone project
 
 ## Quick start
-- Clone the repositiry:
+- Clone this reposotiry:
   ```
   git clone https://github.com/Sanshain/django_prototype.git
   ```

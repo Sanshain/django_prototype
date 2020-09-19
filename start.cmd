@@ -8,6 +8,7 @@ set /p x=
 if "%x%"=="y" echo "__venv/Scripts/pip.exe" %%1 %%2 %%3 > pip.cmd
 @echo on
 pip install -r "django_prototype/requirements.txt"
+python manage.py migrate
 cd django_prototype/proto_app/static
 npm i
 @echo off

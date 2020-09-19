@@ -34,11 +34,11 @@ And don't forget change `SECRET_KEY` value inside `settings.py` after all
   ```
   git clone https://github.com/Sanshain/django_prototype.git
   ```
-- Create own virtualenv and activate it:
+- Create own virtualenv:
   ```
   virtualenv __venv
   ```
-- Activate vitrualenv:
+- Activate it:
   - linux:
   ```
     __venv/bin/activate

@@ -10,7 +10,20 @@ Full-featured django sample for quick launch of any project
 - SigninView and base template
 - some necessary folders like `static`, `forms`, `views`, `models`, which does not made the `manage.py startapp` 
 
-## Quick start (manual)
+## Quick start
+
+Launch:
+- on window
+  ```
+  start.cmd
+  ```
+- linux:
+  ```
+  start.sh
+  ```
+And don't forget change `SECRET_KEY` value inside `settings.py` after all
+
+## Manual start
 - Clone this repository:
   ```
   git clone https://github.com/Sanshain/django_prototype.git

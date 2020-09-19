@@ -1,6 +1,6 @@
 Full-featured django sample for quick launch of any project
 
-## Consists of:
+## Consists of
 
 - Tools for static files autj building:
   - configured rollup with typescript plugin

@@ -6,9 +6,9 @@ Usefull django sample project for quick start anyone project
 git clone https://github.com/Sanshain/django_prototype.git
 ```
 - Create own virtualenv and activate it:
-```
-virtualenv __venv
-```
+  ```
+  virtualenv __venv
+  ```
 - Activate vitrualenv:
   - linux:
   ```

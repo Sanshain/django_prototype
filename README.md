@@ -51,6 +51,10 @@ And don't forget change `SECRET_KEY` value inside `settings.py` after all
   ```
   pip install -r "django_prototype/requirements.txt"
   ```
+- make migrations:
+  ```
+  python manage.py migrate
+  ```
 - install npm packages:
   ```
   cd django_prototype\proto_app\static

@@ -1,5 +1,4 @@
-# django prototype
-Usefull django sample project for quick start
+Usefull django sample project for quick start anyone project
 
 ## Quick start
 - Clone the repositiry:

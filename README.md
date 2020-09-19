@@ -1,4 +1,6 @@
 # django prototype
 Usefull django sample project for quick start
 
-Use `git clone` command to enjoy
+```
+git clone https://github.com/Sanshain/django_prototype.git
+```

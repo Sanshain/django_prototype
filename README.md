@@ -26,6 +26,7 @@ Full-featured django sample for quick launch of any project
   ```
   cd django_prototype\proto_app\static
   npm i
+  npm audit fix
   ```
 - Change `SECRET_KEY` value inside `prototype_project/prototype_project/settings.py` (for secure)
 - Using pycharm change project name and `proto_app` name to wished names (use `shift+F6`). 
